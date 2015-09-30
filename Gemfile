@@ -4,6 +4,20 @@ gem 'rails'
 gem 'sprockets-rails'
 gem 'arel'
 
+
+# Use redis as the database for Active Record
+gem 'redis-objects'
+gem 'dm-core'
+gem 'dm-redis-adapter'
+
+# Beautify / Format helpers
+gem 'ruby-beautify'
+gem 'sass'
+
+# Tradier Gem
+gem 'tradier'
+
+
 # Use Unicorn as the app server
 gem 'unicorn'
 
