@@ -6,4 +6,4 @@ require File.expand_path('../config/application', __FILE__)
 Rails.application.load_tasks
 
 # Hookup our pre-commit hooks on boot.
-system("cp -fv ./bin/pre-commit .git/hooks/")
+system("ln -sf bin/pre-commit .git/hooks/pre-commit")
