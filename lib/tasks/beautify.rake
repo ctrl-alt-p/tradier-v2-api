@@ -14,9 +14,7 @@ namespace :beautify do
       "public",
       "test",
     ]
-    folders.each do |folder|
-      system("cd #{Rails.root} && find #{folder} -name '*.rb' -exec ruby-beautify --overwrite {} \\; -exec git add {} \\;")
-    end
+    system("cd #{Rails.root} && find #{folders.join(' ')} -name '*.rb' -exec ruby-beautify --overwrite {} \\; -exec git add {} \\;")
   end
 
   desc "Beautify all JS files"
@@ -25,9 +23,7 @@ namespace :beautify do
     folders = [
       "app/assets/javascripts",
     ]
-    folders.each do |folder|
-      system("cd #{Rails.root} && find #{folder} -name '*\\.js*' -exec js-beautify --replace {} \\; -exec git add {} \\;")
-    end
+    system("cd #{Rails.root} && find #{folders.join(' ')} -name '*\\.js*' -exec js-beautify --replace {} \\; -exec git add {} \\;")
   end
 
 
@@ -36,9 +32,7 @@ namespace :beautify do
     folders = [
       "app/assets/stylesheets",
     ]
-    folders.each do |folder|
-      system("cd #{Rails.root} && find #{folder} -name '*.scss' -exec sass-convert --unix-newlines --indent 4 --from scss --to scss {} {} \\; -exec git add {} \\;")
-    end
+    system("cd #{Rails.root} && find #{folders.join(' ')} -name '*.scss' -exec sass-convert --unix-newlines --indent 4 --from scss --to scss {} {} \\; -exec git add {} \\;")
   end
 
 end
