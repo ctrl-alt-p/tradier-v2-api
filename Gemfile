@@ -4,8 +4,14 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.4'
 
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+# Use redis as the database for Active Record
+gem 'redis-objects'
+gem 'dm-core'
+gem 'dm-redis-adapter'
+
+# Tradier Gem
+gem 'tradier'
+
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
@@ -41,10 +47,17 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'ruby-beautify'
 gem 'sass'
 
+gem 'mysql2'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
+
+  # Shim to load environment variables from .env into ENV in development.
+  gem 'dotenv-rails'
+
+  # Use Sqlite for specs
+  gem 'sqlite3'
 end
 
 group :development do
