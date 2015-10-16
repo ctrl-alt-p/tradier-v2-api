@@ -9,6 +9,10 @@ group :development, :test do
 end
 
 
+gem 'classy_enum'
+gem 'friendly_id'
+gem 'hashie'
+
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

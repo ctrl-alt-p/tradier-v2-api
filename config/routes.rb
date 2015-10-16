@@ -1,4 +1,14 @@
 Rails.application.routes.draw do
+  resources :companies, except: [:new, :edit]
+  resources :stock_indices, except: [:new, :edit]
+  namespace :api do
+  get 'indexes/index'
+  end
+
+  namespace :api do
+  get 'indexes/show'
+  end
+
 	# The priority is based upon order of creation: first created -> highest priority.
 	# See how all your routes lay out with "rake routes".
 
